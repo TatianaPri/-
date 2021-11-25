@@ -1,0 +1,83 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(0, "");
+
+    int i = 0;
+    int lengthline = 0;
+    int tecture = 0;
+    cout << "[+] Геометрические фигуры" << endl << endl;
+    cout << "[1] Линия" << endl;
+    cout << "[2] Квадрат" << endl;
+    cout << "[+] Выберите фигуру: ";
+   
+    int figure;
+    cin >> figure;
+    switch (figure) {
+    case 1:
+
+        int line;
+        cout << "[+] Тип линии:" << endl;
+        cout << "[1] Горизонтальная" << endl;
+        cout << "[2] Вертикальная" << endl << endl;
+        cout << "[+] Введите номер выбранного типа линии: ";
+        cin >> line;
+
+        if (line == 1) {
+            system("cls");
+            cout << "Сэр, вы выбрали горизонтальную линию!" << endl;
+            cout << " Длина линии: ";
+            cin >> lengthline;
+            cout << "[*] Текстура линии: ";
+            cin >> tecture;
+            cout << " Результат: ";
+            while (i < lengthline)
+            {
+                cout << tecture;
+                i++;
+            }
+        }
+        else if (line == 2) {
+            system("cls");
+            cout << "Сэр, вы выбрали вертикальную линию!" << endl;
+            cout << " Длина линии: ";
+            cin >> lengthline;
+            cout << "[*] Текстура линии: ";
+            cin >> tecture;
+            cout << " Результат: ";
+            while (i < lengthline)
+            {
+                cout << tecture;
+                i++;
+            }
+        }
+        else {
+            cout << "Такого номера нет, сэр!";
+            break;
+    case 2:
+    {
+        system("cls");
+        cout << "[+] Квадрат" << endl << endl;
+        cout << "[*] Размер: ";
+        int size;
+        cin >> size;
+        cout << "[+] Текстура: ";
+        char texture;
+        cin >> texture;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                cout << texture << " ";
+            }
+            cout << "\n";
+        }
+        break;
+             }
+        }
+    }
+
+    int _; cin >> _;
+    return 0;
+}

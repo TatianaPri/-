@@ -30,7 +30,7 @@ int main()
                 {
                     cout << texture << " ";
                 }
-                else if (i + j == 10)
+                else if (i + j == size)
                 {
                     cout << texture << " ";
                 }

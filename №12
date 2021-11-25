@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(0, "");
+    cout << " Фигура: Крест под углом " << endl << endl;
+    cout << "[1] Крест" << endl;
+    cout << "[2] Выход" << endl;
+    cout << "Выберите номер фигуры, сэр: ";
+    short numer;
+    cin >> numer;
+
+    switch (numer) {
+
+    case 1:
+        system("cls");
+        cout << "[+] Выберите размер креста: ";
+        int size;
+        cin >> size;
+        cout << "[+] Выберите текстуру креста: ";
+        int texture;
+        cin >> texture;
+        cout << "[+] Результат: ";
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if (i == j)
+                {
+                    cout << texture << " ";
+                }
+                else if (i + j == 10)
+                {
+                    cout << texture << " ";
+                }
+                else
+                {
+                    cout << "  ";
+                }
+            }
+            cout << "\n";
+        }
+
+        break;
+    case 2:
+        exit;
+        system("cls");
+        break;
+    }
+
+    int _; cin >> _;
+    return 0;
+}

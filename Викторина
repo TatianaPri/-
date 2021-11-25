@@ -1,0 +1,211 @@
+#include <iostream>
+using namespace std;
+
+
+
+int main() {
+	setlocale(0, "");
+
+	cout << "Викторина!" << endl << endl;
+	cout << "[1] Начать игру!" << endl;
+	cout << "[2] Выйти" << endl;
+	cout << "Выберите действие, сэр: ";
+	int numer;
+	cin >> numer;
+
+	
+	switch (numer) {
+	case 1:
+		system("cls");
+		cout << "Время отвечать на вопросы!"<<endl;
+		cout << "[1]" << endl;
+		cout << "[2]" << endl;
+		cout << "[3]" << endl;
+		cout << "[4]" << endl;
+		cout << "[5]" << endl;
+		cout << "[6]" << endl;
+		cout << "[7]" << endl;
+		cout << "[8]" << endl;
+		cout << "[9]" << endl;
+		cout << "[10]" << endl;
+		cout << "Выберите номер вопроса: ";
+		int number;
+		cin >> number;
+
+		switch (number) {
+		case 1:
+			cout << "Россия это страна?" << endl;
+			cout << "[1] да" << endl;
+			cout << "[2] нет" << endl;
+			cout << "[3] это город" << endl;
+			cout << "[4] это США" << endl;
+			cout << "ответ" ;
+			int otvet;
+			cin >> otvet;
+			if (otvet == 1) {
+				cout << "Это правильный ответ!";
+			}
+			else {
+				cout << "Это неверный ответ!";
+			}
+			
+			break;
+		case 2:
+			cout << "КС 54 это колледж?" << endl;
+			cout << "[1] да" << endl;
+			cout << "[2] нет" << endl;
+			cout << "[3] это вуз" << endl;
+			cout << "[4] это второй дом" << endl;
+			cout << "ответ";
+			int otvet_1;
+			cin >> otvet_1;
+			if (otvet_1 == 1) {
+				cout << "Это правильный ответ!";
+			}
+			else {
+				cout << "Это неверный ответ!";
+			}
+			break;
+		case 3:
+			cout << "В кс 54 есть столовая?" << endl;
+			cout << "[1] да " << endl;
+			cout << "[2] нет" << endl;
+			cout << "[3] не уверен" << endl;
+			cout << "[4] это нельзя назвать столовой" << endl;
+			cout << "ответ";
+			int otvet_2;
+			cin >> otvet_2;
+			if (otvet_2 == 1) {
+				cout << "Это правильный ответ!";
+			}
+			else {
+				cout << "Это неверный ответ!";
+			}
+			break;
+		case 4:
+			cout << "Собака это кот?" << endl;
+			cout << "[1] нет" << endl;
+			cout << "[2] да" << endl;
+			cout << "[3] это птица" << endl;
+			cout << "[4] это бывший волк" << endl;
+			cout << "ответ";
+			int otvet_3;
+			cin >> otvet_3;
+			if (otvet_3 == 1) {
+				cout << "Это правильный ответ!";
+			}
+			else {
+				cout << "Это неверный ответ!";
+			}
+			break;
+		case 5:
+			cout << "Птицы летают?" << endl;
+			cout << "[1] не все" << endl;
+			cout << "[2] да" << endl;
+			cout << "[3] нет" << endl;
+			cout << "[4] только собаки летают" << endl;
+			cout << "ответ";
+			int otvet_4;
+			cin >> otvet_4;
+			if (otvet_4 == 1) {
+				cout << "Это правильный ответ!";
+			}
+			else {
+				cout << "Это неверный ответ!";
+			}
+			break;
+		case 6:
+			cout << "Гитлер жил в Германии?" << endl;
+			cout << "[1] да" << endl;
+			cout << "[2] нет " << endl;
+			cout << "[3] он жил в России " << endl;
+			cout << "[4] он жил в СССР" << endl;
+			cout << "ответ";
+			int otvet_5;
+			cin >> otvet_5;
+			if (otvet_5 == 1) {
+				cout << "Это правильный ответ!";
+			}
+			else {
+				cout << "Это неверный ответ!";
+			}
+			break;
+		case 7:
+			cout << "Лед зимой появляется?" << endl;
+			cout << "[1] да" << endl;
+			cout << "[2] нет" << endl;
+			cout << "[3] только летом" << endl;
+			cout << "[4] что за вопросы" << endl;
+			cout << "ответ";
+			int otvet_6;
+			cin >> otvet_6;
+			if (otvet_6 == 1) {
+				cout << "Это правильный ответ!";
+			}
+			else {
+				cout << "Это неверный ответ!";
+			}
+			break;
+		case 8:
+			cout << "Россия это континет?" << endl;
+			cout << "[1] нет" << endl;
+			cout << "[2] да" << endl;
+			cout << "[3] Россия это весь мир" << endl;
+			cout << "[4] это Азия" << endl;
+			cout << "ответ";
+			int otvet_7;
+			cin >> otvet_7;
+			if (otvet_7 == 1) {
+				cout << "Это правильный ответ!";
+			}
+			else {
+				cout << "Это неверный ответ!";
+			}
+			break;
+		case 9:
+			cout << "Столица Шри-Ланки" << endl;
+			cout << "[1]Шри-Джаяварденепура-Коттэ" << endl;
+			cout << "[2]Катар" << endl;
+			cout << "[3]Шри-Ланка" << endl;
+			cout << "[4]Москва" << endl;
+			cout << "ответ";
+			int otvet_8;
+			cin >> otvet_8;
+			if (otvet_8 == 1) {
+				cout << "Это правильный ответ!";
+			}
+			else {
+				cout << "Это неверный ответ!";
+			}
+			break;
+		case 10:
+			cout << "Столица Братиславы" << endl;
+			cout << "[1] Это столица Словакии" << endl;
+			cout << "[2] Любляна" << endl;
+			cout << "[3] Белград" << endl;
+			cout << "[4] Грозный" << endl;
+			cout << "ответ";
+			int otvet_9;
+			cin >> otvet_9;
+			if (otvet_9 == 1) {
+				cout << "Это правильный ответ!";
+			}
+			else {
+				cout << "Это неверный ответ!";
+			}
+			break;
+		default:
+			cout << "Такого номера нет,сэр";
+
+		}
+		break;
+	case 2:
+		system("cls");
+		main();
+		break;
+	}
+
+
+	int _; cin >> _;
+	return 0;
+}

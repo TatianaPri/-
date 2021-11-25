@@ -1,0 +1,222 @@
+#include <iostream>
+#include <ctime>
+#include <string>
+#include <windows.h>
+
+using namespace std;
+short menu_choice, settingChoice;
+string color, backgroundColorChoise, foregroundColorChoise;
+int menuColorChoise;
+char win = '-';
+short PlayerName1, PlayerName2;
+char cells[9] = { '-','-','-','-','-','-','-','-','-' };
+
+
+void clear() {
+	system("cls");
+
+}
+
+void rulesGame() {
+	cout << "Добро пожаловать в игру <Крестики-нолики>! ";
+	cout << "Правила простые!";
+	cout << "1. Каждый игрок выбирает за какую фигуру будут играть: Х или О. В игру могут играть не более двух участников. ";
+	cout << "2. Если первым свой ход сделал Х, то следующий ход за О. Аналогично, если О начинает игру. Ходы чередуются всю игру. ";
+	cout << "3. Участник может поставить Х или О в любую свободную клетку на поле. ";
+	cout << "4. Победу одерживает участник, собравший три Х или О, в зависимости от выбранного значка для игры, в определенной последовательности: ";
+	cout << " - Три Х или О в ряд по горизонтали; ";
+	cout << "- Три Х или О в ряд по вертикали; ";
+	cout << "- Три Х или О в ряд по диагонали;";
+	cout << "5. Объявляется ничья, если не выиграл ни один из игроков.";
+	cout << "Чтобы вернуться в меню, нажмите Enter. ";
+	int _; cin >> _;
+}
+
+void mainMenu() {
+	cout << "Приетствую тебя в игре!" << endl;
+	cout << "[1]Начать игру" << endl;
+	cout << "[2]Параметры" << endl;
+	cout << "[3]Правила игры" << endl;
+	cout << "[4]Выход" << endl;
+	cout << "[*]Что вы выбираете, сэр: ";
+	cin >> menu_choice;
+}
+
+void settingsMenu() {
+	cout << "Сэр, мы зашли в настройки!"<<endl;
+	cout << "[1]Очередность хода!" << endl;
+	cout << "[2]Размер поля, сэр!" << endl;
+	cout << "[3]Выбирем цвет ваших значков, сэр!" << endl;
+	cout << "[4]Валим отсюда, сэр!" << endl;
+	cout << "[*]Что вы выбираете, сэр: ";
+	cin >> settingChoice;
+
+}
+
+void choise_Players()
+{
+	cout << "Выбираем, кто ходит первый, сэр!" << endl << endl;
+	cout << "[1] Игрок 1" << endl;
+	cout << "[2] Игрок 2" << endl;
+	cout << "[*] Выбирете, кто первый ходит, сэр: ";
+	int choise_Player;
+	cin >> choise_Player;
+	switch (choise_Player)
+	{
+	case 1:
+		cout << "Ходит игрок №1";
+		break;
+	case 2:
+		cout << "Ходит игрок №2";
+		break;
+	case 3:
+		cout << "Сэр, в крестики нолики играют только 2 человека";
+	default:
+		break;
+	}
+}
+
+void size_polya() {
+
+	int size_p;
+	cout << "Выбираем размер поля, сэр!\n\n";
+	cout << "[1] Поле 3х3\n";
+	cout << "[2] Поле 4х4\n";
+	cout << "[3] Поле 5х5\n";
+	cout << "[*] Введите номер выбранного поля:";
+	cin >> size_p;
+
+	switch (size_p) {
+	case 1:
+		
+		cout << "-" << 1 << "-" << "|" << "-" << 2 << "-" << "|" << "-" << 3 << "-" << endl;
+		cout << "-" << 4 << "-" << "|" << "-" << 5 << "-" << "|" << "-" << 6 << "-" << endl;
+		cout << "-" << 7 << "-" << "|" << "-" << 8 << "-" << "|" << "-" << 9 << "-" << endl;
+
+		break;
+	case 2:
+		cout << "-" << 1 << "-" << "|" << "-" << 2 << "-" << "|" << "-" << 3 << "-" << "|" << "-" << 4 << endl;
+		cout << "-" << 5 << "-" << "|" << "-" << 6 << "-" << "|" << "-" << 7 << "-" << "|" << "-" << 8 << endl;
+		cout << "-" << 9 << "-" << "|" << "-" << 10 << "-" << "|" << "-" << 11 << "-" << "|" << "-" << 12 << endl;
+		cout << "-" << 13 << "-" << "|" << "-" << 14 << "-" << "|" << "-" << 15 << "-" << "|" << "-" << 16 << endl;
+
+		break;
+
+	case 3:
+		cout << "-" << 1 << "-" << "|" << "-" << 2 << "-" << "|" << "-" << 3 << "-" << "|" << "-" << 4 << "-"  << "|" << "-" << 5 << endl;
+		cout << "-" << 6 << "-" << "|" << "-" << 7 << "-" << "|" << "-" << 8 << "-" << "|" << "-" << 9 << "-" << "|" << "-" << 10 << endl;
+		cout << "-" << 11 << "-" << "|" << "-" << 12 << "-" << "|" << "-" << 13 << "-" << "|" << "-" << 14 << "-" << "|" << "-" << 15 << endl;
+		cout << "-" << 16 << "-" << "|" << "-" << 17 << "-" << "|" << "-" << 18 << "-" << "|" << "-" << 19 << "-" << "|" << "-" << 20 << endl;
+		cout << "-" << 21 << "-" << "|" << "-" << 22 << "-" << "|" << "-" << 23 << "-" << "|" << "-" << 24 << "-" << "|" << "-" << 25 << endl;
+		break;
+
+	}
+}
+
+
+void changeColor()
+{	
+	cout << " [*] Возможные цвета для выбора на время игры, сэр! \n\n";
+	cout << " [0] - Black\n";
+	cout << " [1] - Sapphirine\n";
+	cout << " [2] - Green\n";
+	cout << " [3] - Blue\n";
+	cout << " [4] - Red\n";
+	cout << " [5] - Magenta\n";
+	cout << " [6] - Yellow\n";
+	cout << " [7] - White\n";
+	cout << " [8] - Gray\n";
+
+
+	cout << "[*] Выбирете цвет фона на время иргры, сэр: ";
+	cin >> backgroundColorChoise;
+	cout << "[*] Выбирете цвет текста на время игры, сэр: ";
+	cin >> foregroundColorChoise;
+	cout << "\n\n";
+
+	color = "color " + backgroundColorChoise + foregroundColorChoise;
+	const char* userColor = color.c_str();
+	system(userColor);
+}
+
+void menuColors()
+{  
+	cout << "[*] Выбирете какой цвет хотите увидеть, сэр!" << endl << endl;
+	cout << "[1] - Цвет для Х и О" << endl;
+	cout << "[2] - Цвет для консоли" << endl;
+	cout << "[3] - Вернуться в меню" << endl;
+	cout << "[*] Выбирете кнопку: : ";
+	cin >> menuColorChoise;
+	while (menuColorChoise < 1 || menuColorChoise > 3)
+	{
+		cout << "[!]Ошибка! Нет такой кнопки." << endl; 
+		cout << "[*] Попробуйте еще раз : ";
+		cin >> menuColorChoise;
+	}
+	cout << "\n\n";
+}
+
+
+int main() {
+	setlocale(0, "");
+	clear();
+
+	mainMenu();
+
+	switch(menu_choice){
+	case 1:
+		clear();
+		
+		mainMenu();
+
+		break;
+	case 2:
+		clear();
+		settingsMenu();
+		switch (settingChoice) {
+
+		case 1:
+			clear();
+			choise_Players();
+			system("pause");
+			main();
+			break;
+		case 2:
+			clear();
+			size_polya();
+
+			system("pause");
+			main();
+			break;
+		case 3:
+			changeColor();
+			clear();
+			system("pause");
+			main();
+
+			break;
+		case 4: 
+			clear();
+			exit(404);
+
+			main();
+		default: 
+			clear();
+			cout<<" Вы ввели что-то не то, сэр!";
+			system("pause");
+			main();
+		}
+		break;
+	case 3: 
+		clear();
+		rulesGame();
+		main();
+		break;
+	case 4: 
+		clear();
+		exit(404);
+	}
+
+	int _; cin >> _;
+	return 0;
+}

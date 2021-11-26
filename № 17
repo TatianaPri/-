@@ -1,0 +1,105 @@
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void clear();
+void menu();
+
+void clear() {
+    system("cls");
+}
+
+int Calc(int num1, int num2, char operation)
+{
+    if (operation == '/' && num2 == 0)
+        cout << '0';
+    switch (operation)
+    {
+    case '+':
+        return num1 + num2;
+        break;
+    case '-':
+        return num1 - num2;
+        break;
+    case '*':
+        return num1 * num2;
+        break;
+    case '/':
+        return num1 / num2;
+        break;
+    case '^':
+        return pow(num1, num2);
+        break;
+    case '%':
+        return num1 % num2;
+        break;
+    case '2':
+        return sqrt(num1);
+        break;
+    case '3':
+        return cbrt(num1);
+        break;
+    default:
+        cout << "Такого действия не существует" << endl;
+        break;
+    }
+    system("pause");
+    clear();
+    menu();
+}
+
+void menu() {
+    int num1, num2;
+    char operation;
+
+    cout << "Приветствуем Вас в программе — \"Калькулятор\"";
+    cout << "[0] Выход" << endl;
+    cout << "Сколько чисел будете использовать: ";
+    short a; cin >> a;
+
+
+    if (a == 0)
+        abort();
+    else if (a == 1)
+    {
+        cout << "[*]Введите ваше число: ";
+        cin >> num1;
+        cout << endl;
+        cout << "[2]Квадратный корень из числа"<<endl;
+        cout << "[3]Кубический корень из числа" << endl;
+        cin >> operation;
+        cout << "Результат: " << Calc(num1, 0, operation) << endl<<endl;
+    }
+    else if (a == 2)
+    {
+
+        cout << "[*]Введите первое число: ";
+        cin >> num1;
+        cout << "[*]Введите второе число: ";
+        cin >> num2;
+        cout << endl;
+
+        cout << "[+] - сложение"<<endl;
+        cout << "[-] - вычитание"<<endl;
+        cout << "[*] - умножение"<<endl;
+        cout << "[/] - деление"<<endl;
+        cout << "[^] - возведение в степень"<<endl;
+        cout << "[%] - остаток от деления"<<endl;
+        cout << "Выберите действие: ";
+        cin >> operation;
+        cout << "[*]Результат: " << Calc(num1, num2, operation) << endl;
+    }
+    else {
+        cout << "Такого действия не существует";
+        clear();
+        menu();
+    }
+}
+
+int main(int argc, char* argv[]) {
+    setlocale(0, "");
+    menu();
+    int _; cin >> _;
+    return 0;
+}
